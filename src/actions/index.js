@@ -1,3 +1,5 @@
+// Todo Actions
+
 let nextTodoId = 0
 export const addTodo = text => {
   return {
@@ -25,5 +27,21 @@ export const removeTodo = id => {
   return {
     type: 'REMOVE_TODO',
     id
+  }
+}
+
+// Counter Actions
+
+export const incrementCounter = (value) => {
+  return {
+    type: 'INCREMENT_COUNTER',
+    value
+  }
+}
+
+export const decrementCounter = (value) => {
+  return {
+    type: 'DECREMENT_COUNTER',
+    value
   }
 }

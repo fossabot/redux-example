@@ -17,7 +17,7 @@ let AddTodo = ({ dispatch }) => {
   return (
     <div>
       <form
-        onSubmit={e => handleSubmit(e)}
+        onSubmit={handleSubmit}
       >
         <input
           ref={node => {

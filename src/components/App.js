@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
-import Counter from './Counter';
+import Counter from '../containers/Counter';
 
 
 class App extends Component {
