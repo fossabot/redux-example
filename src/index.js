@@ -7,9 +7,14 @@ import App from './components/App'
 
 let store = createStore(todoApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
-render(
+
+const Root = (
   <Provider store={store}>
     <App />
-  </Provider>,
+  </Provider>
+)
+
+render(
+  Root,
   document.getElementById('root')
 )
