@@ -1,26 +1,21 @@
 import React from 'react'
-import FilterLink from '../containers/FilterLink'
+import { Link } from 'react-router-dom'
 
-const Footer = () => (
-  <p>
-    Show:
+const Footer = ({ basePath }) => {
+  const routerLinks = (
+    <p>
+      Show:
     {' '}
-    <FilterLink filter="SHOW_ALL">
-      All
-    </FilterLink>
-    {', '}
-    <FilterLink filter="SHOW_ACTIVE">
-      Active
-    </FilterLink>
-    {', '}
-    <FilterLink filter="SHOW_COMPLETED">
-      Completed
-    </FilterLink>
-    {', '}
-    <FilterLink filter="SHOW_REMOVED">
-      Removed
-    </FilterLink>
-  </p>
-)
+      <Link to={basePath}>All</Link>
+      {', '}
+      <Link to={`${basePath}/active`}>Active</Link>
+      {', '}
+      <Link to={`${basePath}/completed`}>Completed</Link>
+      {', '}
+      <Link to={`${basePath}/removed`}>Removed</Link>
+    </p>
+  )
+  return routerLinks
+}
 
 export default Footer

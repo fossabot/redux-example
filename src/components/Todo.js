@@ -20,7 +20,7 @@ Todo.propTypes = {
   onRemove: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
-  removed: PropTypes.bool.isRequired
+  removed: PropTypes.bool
 }
 
 export default Todo
