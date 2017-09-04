@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import TodoApp from './TodoApp'
 import Counter from '../containers/Counter'
@@ -7,6 +8,9 @@ import Counter from '../containers/Counter'
 const About = ({ match }) => (
   <h1>Hello {match.url} </h1>
 )
+About.propTypes = {
+  match: PropTypes.object.isRequired
+}
 
 const App = () => (
   <div>
@@ -25,4 +29,4 @@ const App = () => (
   </div>
 )
 
-export default App;
+export default App

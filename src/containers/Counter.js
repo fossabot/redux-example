@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { incrementCounter, decrementCounter } from '../actions';
+import React from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
+import { incrementCounter, decrementCounter } from '../actions'
 
 let Counter = ({ counter, incrementCounter, decrementCounter }) => {
   function handleIncrement() {
-    incrementCounter(1);
+    incrementCounter(1)
   }
   function handleDecrement() {
-    decrementCounter(1);
+    decrementCounter(1)
   }
   return (
     <div>
@@ -15,22 +17,29 @@ let Counter = ({ counter, incrementCounter, decrementCounter }) => {
       <button onClick={handleIncrement}>Increment</button>
       <button onClick={handleDecrement}>Decrement</button>
     </div>
-  );
-};
+  )
+}
+
+Counter.propTypes = {
+  counter: PropTypes.number.isRequired,
+  incrementCounter: PropTypes.func.isRequired,
+  decrementCounter: PropTypes.func.isRequired
+}
 
 
-const mapStateToProps = (state, ownProps) => {
+
+const mapStateToProps = (state) => {
   return {
     counter: state.counter
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     incrementCounter: value => dispatch(incrementCounter(value)),
     decrementCounter: value => dispatch(decrementCounter(value))
   }
 }
 
-Counter = connect(mapStateToProps, mapDispatchToProps)(Counter);
-export default Counter;
+Counter = connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default Counter

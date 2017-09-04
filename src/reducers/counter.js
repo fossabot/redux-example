@@ -1,12 +1,12 @@
 const counter = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT_COUNTER':
-      return state + action.value;
+      return state + action.value
     case 'DECREMENT_COUNTER':
-      return state - action.value;
+      return state - action.value
     default:
-      return state;
+      return state
   }
 }
 
-export default counter;
+export default counter

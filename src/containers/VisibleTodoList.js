@@ -11,7 +11,7 @@ const getVisibleTodos = (todos, filter) => {
     case 'SHOW_ACTIVE':
       return todos.filter(t => !t.completed)
     case 'SHOW_REMOVED':
-      return todos.filter(t => t.removed);
+      return todos.filter(t => t.removed)
   }
 }
 
