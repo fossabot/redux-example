@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Todo from './Todo'
 
 const TodoList = ({ todos, onTodoClick, onTodoRemove }) => {
-  console.log(todos);
   return (
     <ul>
       {todos.map(todo => (
