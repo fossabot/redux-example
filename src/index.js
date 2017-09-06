@@ -1,12 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import todoApp from './reducers'
 import App from './components/App'
+import configureStore from './store'
 
-let store = createStore(todoApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
+const store = configureStore()
 
 const Root = (
   <Provider store={store}>

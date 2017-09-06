@@ -1,4 +1,4 @@
-const todos = (state = [], action) => {
+export const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -21,9 +21,27 @@ const todos = (state = [], action) => {
           ? { ...todo, removed: true }
           : todo
       )
+    case 'ITEMS_FETCH_DATA_SUCCESS':
+      return action.items
     default:
       return state
   }
 }
 
-export default todos
+export const itemsIsLoading = (state = false, action) => {
+  switch (action.type) {
+    case 'ITEM_IS_LOADING':
+      return action.isLoading
+    default:
+      return state
+  }
+}
+
+export const itemsHasErrored = (state = false, action) => {
+  switch (action.type) {
+    case 'ITEM_HAS_ERRORED':
+      return action.hasErrored
+    default:
+      return state
+  }
+}

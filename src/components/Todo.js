@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Todo = ({ onClick, onRemove, completed, text, removed }) => (
+const Todo = ({ onClick, onRemove, completed, title, removed }) => (
   <li>
     <span
       onClick={onClick}
@@ -9,7 +9,7 @@ const Todo = ({ onClick, onRemove, completed, text, removed }) => (
         textDecoration: completed ? 'line-through' : 'none'
       }}
     >
-      {text}
+      {title}
     </span>
     {completed && !removed && <button type="button" onClick={onRemove}>x</button>}
   </li>
@@ -19,7 +19,7 @@ Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   removed: PropTypes.bool
 }
 
